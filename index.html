@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="index.css" />
+</head>
+<body>
+    <section>
+        <div class="header">
+            <div class="logo">My Dashboard</div>
+            <div class="userinfo">
+                <label>SAICHARAN K</label>
+                <img src="images/logout.png" alt="" />
+            </div>
+        </div>
+        <div class="menu">
+            <nav>
+                <ul>
+                    <li class="active" onclick="loadmodules(1)"><img src="/images/dashboard.png" alt="" /> Dashboard</li>
+                    <li onclick="loadmodules(2)"><img src="/images/users.png" alt="" /> Users</li>
+                    <li onclick="loadmodules(3)"><img src="/images/profile.png" alt="" /> My Profile</li>
+                    <li onclick="loadmodules(4)"><img src="/images/settings.png" alt="" /> Settings</li>
+                </ul>
+            </nav>
+        </div>
+        <div class="workspace">
+            <iframe src="dashboard.html" id="ifrm"></iframe>
+        </div>
+        <div class="footer">Copyright @ 2025. All rights reserved</div>
+    </section>
+</body>
+<script>
+    function loadmodules(mid){
+        const menuItems = document.querySelectorAll('section .menu nav ul li ')
+        //Remove acitve on li tag//
+        for(li of menuItems)
+        li.classList.remove('active');
+
+     //add active on li tag//
+       event.currentTarget.classList.add('active');
+        switch(mid){
+            case 1:
+            ifrm.src = "dashboard.html"
+            break;
+             case 2:
+                ifrm.src ="users.html" 
+                break;
+              case 3:
+                 ifrm.src ="myprofile.html" 
+                break;
+               case 4:
+                 ifrm.src ="settings.html" 
+                break;
+        }
+    }
+</script>
+</html>
